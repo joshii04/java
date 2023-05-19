@@ -1,3 +1,6 @@
+package lab1;
+
+
 public class Mug //same name as the file name 
 {
     //in here everything is under the Mug file name

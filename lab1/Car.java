@@ -1,4 +1,4 @@
-
+package lab1;
 
 public class Car //good practice to have captial for a class 
 {
