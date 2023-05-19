@@ -1,6 +1,4 @@
-/* 
-making a car
-*/
+
 
 public class Car //good practice to have captial for a class 
 {
