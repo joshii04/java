@@ -7,7 +7,7 @@ import java.util.*;
 import java.io.*;
 
 
-public class StockLinkedList  implements StockList
+public class StockLinkedList implements StockList
 {
     
     /**

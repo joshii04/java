@@ -9,7 +9,7 @@ public class StockItemTester2
     StockItem2 item2 = new StockItem2("AC123", "x100 Rubber-Bands", 0.99, 50, 20);
     StockItem2 item3 = new StockItem2("Tt432", "x30 Screwdriver",56.00, 15, 13);
 
-    System.out.println("\n--------------testing constructor-----------------");
+    System.out.println("\n--------------testing constructor-----------------\n");
 
     System.out.println(item1); //testing the constructor
     System.out.println(item2);
@@ -17,7 +17,7 @@ public class StockItemTester2
     // item1.getItemID("EW123");//testing the sets
     // item1.getItemDesc("x1 Hammer");
 
-    System.out.println("\n--------------testing sets-----------------");
+    System.out.println("\n--------------testing sets-----------------\n");
 
     item1.setPrice(9.00); //testing sets
     item1.setQuantity(10);
