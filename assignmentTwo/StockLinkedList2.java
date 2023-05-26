@@ -82,8 +82,38 @@ public class StockLinkedList2 implements StockList2
             }
         }
 
-        
+       
+
+      
 
     }
 
+     //now update item price 
+
+    public void updateItemPrice(String itemID, double price)
+    {
+        //find the item id and then update the price, so use string comparison
+
+        for(StockItem2 item : items)
+        {
+            if(item.getItemID().equals(itemID))
+            {
+                item.setPrice(price); //update the singular item price 
+            }
+        }
+    }
+
+    //update quantity of the item
+
+    public void updateItemQuantity(String itemID, int quantity)
+    {
+        for(StockItem2 item : items)
+        {
+            if(item.getItemID().equals(itemID))
+            {
+                item.setQuantity(quantity); //access the set and change it
+                break;
+            }
+        }
+    }
 }
