@@ -116,4 +116,100 @@ public class StockLinkedList2 implements StockList2
             }
         }
     }
+
+    public void updateReOrderLevel(String itemID, int reOrderLevel)
+    {
+        for(StockItem2 item : items)
+        {
+            if(item.getItemID().equals(itemID))
+            {
+                item.setReOrderLevel(reOrderLevel);
+                break;
+            }
+        }
+    }
+
+    //stockdata 
+
+    //access the file data that the stock list2 is being updated to
+    
+    public void loadStockData(String fileName)
+    {
+        try
+        {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream(fileName));
+            items = (LinkedList<StockItem2>) in.readObject(); //read all of the data from the LL to the file
+            in.close();
+        }
+        catch(IOException e)
+        {
+            System.err.println("Error loading your stock data");
+        }
+
+        catch (ClassNotFoundException e)
+        {
+            System.err.println("Error loading stock data (ClassNotFoundException): " + e.getMessage());
+        }
+
+        catch (ClassCastException e)
+        {
+            e.printStackTrace(); //show error
+        }
+       
+    }
+
+    //now need to save the data 
+
+    //that means you need to write to the file 
+
+    public void saveStockData(String fileName)
+    {
+        try
+        {
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName));
+        }
+        catch(IOException e)
+        {
+            //nothing needed in here, alreadt caught
+        }
+    }
+
+    public String formatStockList()
+    {
+        StringBuilder s = new StringBuilder();
+        
+        s.append(String.format("%-10s %-20s %-10s %-10s %-20s", "ItemID", "Description", "Price", "Qnty", "Re-Order Level" ))
+        .append("\n******     ***********          *****      ****       **************\n");
+
+        for(StockItem2 item : items)
+        {
+            s.append(item.format()).append("\n");
+        }
+
+        return s.toString();
+    }
+
+    /**
+    * @return toString
+    * returns the string method layout for re order list
+    */
+    
+    public String formatReOrderList()//this is used to check if there are any items that are below the threshold of their reOrder levels
+    {
+        StringBuilder s = new StringBuilder();
+
+        s.append("---- RE ORDER LIST ---- \n\n"); //append means to attach to StringBuilder
+        s.append(String.format("%-10s %-20s %-10s %-10s %-20s", "ItemID", "Description", "Price", "Qnty", "Re-Order Level" ))
+        .append("\n******     ***********          *****      ****       **************\n");
+
+        for(StockItem2 item : items)
+        {
+            if(item.getQuantity() < item.getReOrderLevel())
+            {
+                s.append(item.format()).append("\n");
+            }
+        }
+
+        return s.toString();
+    }
 }
