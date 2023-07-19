@@ -1,5 +1,3 @@
-import java.util.*;
-import java.io.*;
 
 public class SuitCase {
     private String handle;
@@ -19,7 +17,7 @@ public class SuitCase {
         this.handle = nHandle;
     }
 
-    public double getWheels(){
+    public int getWheels(){
         return this.wheels;
     }
 
@@ -27,7 +25,7 @@ public class SuitCase {
         this.wheels = nWheels;
     }
 
-    public String toString(){
+    public String format(){
         return "[ Handle: "+getHandle()+"|| Wheels: "+getWheels()+"]";
     }
 }
