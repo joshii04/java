@@ -1,4 +1,5 @@
-package javaPlaying.playArea1;
+import java.util.*;
+import java.io.*;
 
 public class suitCaseTester {
     public static void main(String[]args){
