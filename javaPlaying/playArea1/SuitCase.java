@@ -27,6 +27,6 @@ public class SuitCase {
     }
 
     public String toString(){
-        return "[ Handle: "+getHandle()+" [ Wheels: ]"+getWheels();
+        return "[ Handle: "+getHandle()+"|| Wheels: "+getWheels()+"]";
     }
 }
