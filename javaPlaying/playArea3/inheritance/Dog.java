@@ -17,6 +17,7 @@ public class Dog extends Animal{
 
     public void chew(){
         System.out.println("Dog.chew() is called");
+        
     }
 
     public int getEyes(){
