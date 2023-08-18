@@ -36,4 +36,5 @@ public class Animal {
     public int getWeight(){
         return weight;
     }
+
 }

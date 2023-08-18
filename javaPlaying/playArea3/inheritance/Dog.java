@@ -20,6 +20,13 @@ public class Dog extends Animal{
         
     }
 
+    @Override
+    public void eat(){
+        super.eat();
+        chew();
+        //this is the parent class method that I have brought in to this class
+    }
+
     public int getEyes(){
         return eyes;
     }
@@ -30,5 +37,9 @@ public class Dog extends Animal{
 
     public int getTail(){
         return tail;
+    }
+
+    public String toString(){
+        return "name: "+getName()+" brain: "+getBrain()+" size: "+getSize()+"weight: "+getWeight()+"eyes: "+getEyes()+"Legs: "+getLegs()+"tail: "+getTail();
     }
 }
